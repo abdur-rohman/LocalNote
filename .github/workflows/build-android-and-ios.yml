@@ -39,13 +39,13 @@ jobs:
     - name: Flutter test
       run: flutter test
     - name: Build android
-      run: flutter build apk --obfuscate --split-debug-info=debug_info
+      run: flutter build apk
     - name: Clean up
       run: |
         mv ./build/app/outputs/flutter-apk/app-release.apk android-release.apk
         flutter clean
     - name: Build iOS
-      run: flutter build ios --no-codesign --obfuscate --split-debug-info=debug_info
+      run: flutter build ios --no-codesign
     - name: Clean up
       run: |
         mkdir -p Payload
